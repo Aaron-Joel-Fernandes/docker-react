@@ -1,14 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('Test App.js', () => {
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+    it("Should render app without crashing", () => {
+        expect(
+            JSON.stringify(
+              Object.assign({}, App, { _reactInternalInstance: 'censored' }),
+            ),
+          ).toMatchSnapshot();
+    });
