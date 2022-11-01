@@ -8,7 +8,7 @@ before_install:
   - docker build -t aaron2905/docker-react .
 
 script:
-  - docker run aaron2905/docker-react
+  - docker run -e CI=true aaron2905/docker-react
 
 deploy:
   provider: elasticbeanstalk
@@ -19,5 +19,5 @@ deploy:
   bucket_path: 'docker-react'
   on:
     branch: master
-  access_key_i
+  access_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
