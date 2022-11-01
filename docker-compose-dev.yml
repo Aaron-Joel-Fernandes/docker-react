@@ -5,15 +5,15 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "3010:3000"
+      - '3000:3000'
     volumes:
-      - /home/node/app/node_modules
-      - /opt/docker/frontend:/home/node/app
+      - /app/node_modules
+      - .:/app
   tests:
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - /home/node/app/node_modules
-      - /opt/docker/frontend:/home/node/app
-    command: ["npm","run","test"]
+      - /app/node_modules
+      - .:/app
+    command: ['npm', 'run', 'test']
