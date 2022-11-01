@@ -20,8 +20,4 @@ deploy:
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-<<<<<<< HEAD
-  secret_access_key: $AWS_SECRET_KEY
-=======
-  secret_access_key: ""$AWS_SECRET_KEY"
->>>>>>> parent of 0b7fefc (parsing error fixed)
+  secret_access_key: "$AWS_SECRET_KEY"
