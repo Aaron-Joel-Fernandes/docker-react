@@ -2,8 +2,13 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import ReactDOM from 'react-dom';
 
-test('renders learn react link', () => {
-  const div= document.createElement('div');
-  ReactDOM.createRoot(<App />,div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('Test index.js', () => {
+
+    it("Should render app without crashing", () => {
+        expect(
+            JSON.stringify(
+              Object.assign({}, App, { _reactInternalInstance: 'censored' }),
+            ),
+          ).toMatchSnapshot();
+    });
 });
